@@ -1,6 +1,3 @@
-MLL
-===
-
 #MultiLanguageLibrary
 ##by Pentasource
 
