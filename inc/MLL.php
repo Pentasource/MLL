@@ -25,12 +25,12 @@ class MLL {
 
 		//checks if language is valid
 		if (!self::languageIsValid(self::$lang)) {
-			self::$lang = self::$defaultLang;
+			self::setCurrentLanguage(self::$lang);
 		}
 	}
 
 	public static function languageIsValid($lang) {
-		return (is_file('inc/MLL/lang/' . self::$lang . '.ini'));
+		return (is_file('inc/MLL/lang/' . $lang . '.ini'));
 	}
 
 	public static function setCurrentLanguage($lang) {
@@ -38,7 +38,7 @@ class MLL {
 	}
 	
 	public static function setPreferredLanguage($lang) {
-		setcookie('prefLang', $lang, time()+31536000);
+		setcookie('prefLang', $lang, time()+31536000, "/");
 	}
 	
 	public static function getLang() {
